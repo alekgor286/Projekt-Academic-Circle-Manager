@@ -1,0 +1,84 @@
+﻿<UserControl x:Class="AcademicCircleManagerApp.Views.MemberListForm"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:resx="clr-namespace:AcademicCircleManagerApp.Properties"
+             xmlns:local="clr-namespace:AcademicCircleManagerApp.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="540" d:DesignWidth="960" Foreground="#FFFFF5F5">
+
+    <UserControl.Resources>
+        <Style TargetType="Button">
+            <Setter Property="FontFamily" Value="Charlesworth"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="Width" Value="150"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="MediumPurple" Offset="0.421"/>
+                        <GradientStop Color="MediumPurple" Offset="1"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid Background="#FFF6F6F6">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.15*"/>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="0.5*"/>
+            <ColumnDefinition Width="0.15*"/>
+
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.12*"/>
+            <RowDefinition Height="0.30*"/>
+            <RowDefinition Height="0.30*"/>
+            <RowDefinition Height="0.12*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Grid.ColumnSpan="4">
+            <StackPanel.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="0.421"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </StackPanel.Background>
+
+            <Label Content="{Binding Source={x:Static resx:Resources.MemberList}}" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="26" FontWeight="SemiBold" Margin="15" Foreground="MediumPurple"/>
+            <Button Content="{Binding Source={x:Static resx:Resources.Menu}}" VerticalAlignment="Top" HorizontalAlignment="Right" FontSize="26" FontWeight="SemiBold" Background="MediumPurple" Margin="55,-55"
+                    Foreground="White" BorderThickness="0" Command="{Binding GotoWelcome}" Width="100"/>
+
+        </StackPanel>
+
+        <StackPanel  Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="1" Height="340"  VerticalAlignment="Top" Margin="-90,0,10,0">
+            <ListView Height="340" ItemsSource="{Binding Members}" SelectedItem="{Binding SelectedMember}" FontSize="12">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn  Header="{Binding Source={x:Static resx:Resources.FirstName1}}" Width="200" DisplayMemberBinding="{Binding FirstName}"/>
+                        <GridViewColumn   Header="{Binding Source={x:Static resx:Resources.LastName1}}" Width="200"  DisplayMemberBinding="{Binding LastName}"/>
+                        <GridViewColumn  Header="{Binding Source={x:Static resx:Resources.Year1}}" Width="200" DisplayMemberBinding="{Binding Year}"/>
+                        <GridViewColumn  Header="{Binding Source={x:Static resx:Resources.Faculty1}}" Width="330" DisplayMemberBinding="{Binding Faculty}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </StackPanel>
+        <StackPanel Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="2" Height="340"  VerticalAlignment="Top"  Margin="-90,10,10,0">
+            <TextBox Focusable="False" Height="340" Text="{Binding MemberDetails, Mode=OneWay}" TextWrapping="Wrap"/>
+        </StackPanel>
+
+            <StackPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4">
+            <Button Content="{Binding Source={x:Static resx:Resources.Add}}" Margin="-600,20,20,0" Command="{Binding GotoAddMember}" Width="250"/>
+
+            <Button Grid.Row="2" Content="{Binding Source={x:Static resx:Resources.Edit}}" Margin="0,-30,0,0" Command="{Binding GotoEditMember}" Width="250" />
+
+            <Button Grid.Row="2" Content="{Binding Source={x:Static resx:Resources.Delete}}" Margin="600,-30,0,0" Command="{Binding DeleteMember}" Width="250" />
+
+        </StackPanel>
+    </Grid>
+</UserControl>

@@ -1,0 +1,103 @@
+﻿<UserControl x:Class="AcademicCircleManagerApp.Views.CircleForm"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:resx="clr-namespace:AcademicCircleManagerApp.Properties"
+             xmlns:local="clr-namespace:AcademicCircleManagerApp.Views"
+             xmlns:s="clr-namespace:AcademicCircleManagerApp.Constants"
+             mc:Ignorable="d" 
+             d:DesignHeight="540" d:DesignWidth="960">
+
+    <UserControl.Resources>
+        <Style TargetType="Button">
+            <Setter Property="FontFamily" Value="Charlesworth"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Width" Value="180"/>
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="MediumPurple" Offset="0.421"/>
+                        <GradientStop Color="MediumPurple" Offset="1"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </UserControl.Resources>
+
+    <Grid Background="#FFF6F6F6">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="48*"/>
+            <ColumnDefinition Width="144*"/>
+            <ColumnDefinition Width="217*"/>
+            <ColumnDefinition Width="33*"/>
+            <ColumnDefinition Width="38*"/>
+
+
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.12*"/>
+            <RowDefinition Height="0.60*"/>
+            <RowDefinition Height="0.1*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Grid.ColumnSpan="5" Margin="0,10,0,385" Grid.RowSpan="3">
+            <StackPanel.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="0.421"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </StackPanel.Background>
+
+            <Button Content="{Binding Source={x:Static resx:Resources.Menu}}" FontSize="26" FontWeight="SemiBold" FontFamily="Charlesworth" Background="MediumPurple" BorderThickness="0" Foreground="White" Command="{Binding GotoWelcome}" Width="100" Height="40" Margin="700,20,0,0"/>
+
+           
+
+        </StackPanel>
+
+        <StackPanel Grid.Row="0" Grid.ColumnSpan="5" Margin="0,10,0,385" Grid.RowSpan="3">
+            <Label Content="{Binding SelectedMemberFullName}" VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="26" FontWeight="SemiBold" FontFamily="Charlesworth" Margin="15,0,15,60" Foreground="MediumPurple"/>
+        </StackPanel>
+
+        <StackPanel Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="1" Margin="0,20,0,35">
+            <Button Content="{Binding Source={x:Static resx:Resources.SkillsCathegoryName}}" Margin="200,10,0,0" Command="{Binding ChangeSelectedCathegory}" CommandParameter="{x:Static s:Attributes.Skills}" Width="292"/>
+            <ListBox Height="276" ItemsSource="{Binding SelectedSubcathegory}" d:ItemsSource="{d:SampleData ItemCount=5}" Width="541" Margin="0,10,0,0">
+                <ListBox.ItemContainerStyle>
+                    <Style TargetType="{x:Type ListBoxItem}">
+                        <Setter Property="Focusable" Value="False"/>
+                        <Setter Property="FontFamily" Value="Charlesworth"/>
+                        <Setter Property="FontSize" Value="12"/>
+                    </Style>
+                </ListBox.ItemContainerStyle>
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal" Width="493">
+                            <TextBlock  Text="{Binding Label}" Width="350" TextWrapping="Wrap" />
+                            <CheckBox IsChecked="{Binding YesOptionChecked}" Width="129" Margin="100,0,0,0"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+        </StackPanel>
+        <StackPanel Height="107" Width="500" Margin="125,365,97,-11" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="2" Grid.Row="1">
+            <Button Width="176" Content="{Binding Source={x:Static resx:Resources.Previous}}" Command="{Binding TraverseSubcathegoriesLeft}"/>
+            <Label Width="400" Height="30" Content="{Binding SelectedSubcathegoryName}" FontSize="18" FontFamily="Charlesworth" HorizontalContentAlignment="Center" Foreground="MediumPurple" />
+
+        </StackPanel>
+        <StackPanel Height="107" Width="500" Margin="163,365,-87,-11" Grid.Column="2" Grid.ColumnSpan="3" Grid.RowSpan="2" Grid.Row="1">
+            <Button Width="176" Content="{Binding Source={x:Static resx:Resources.Next}}" Command="{Binding TraverseSubcathegoriesRight}"/>
+
+        </StackPanel>
+        <StackPanel Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" Margin="0,9.8,0,0.4">
+            <Button Content="{Binding Source={x:Static resx:Resources.AcademicCircleCathegoryName}}" Margin="0,20,20,0" Command="{Binding ChangeSelectedCathegory}" CommandParameter="{x:Static s:Attributes.AcademicCircle}" Width="294" VerticalAlignment="Center"/>
+            <Label Content="{Binding Source={x:Static resx:Resources.Interests}}" FontSize="18" FontFamily="Charlesworth" FontWeight="DemiBold" Margin="0,50,0,0" Foreground="MediumPurple" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <TextBox Width="300" Height="216" TextWrapping="Wrap" AcceptsReturn="True" Text="{Binding Interests}" VerticalScrollBarVisibility="Auto" Margin="0,0,0,0" />
+
+        </StackPanel>
+    </Grid>
+</UserControl>

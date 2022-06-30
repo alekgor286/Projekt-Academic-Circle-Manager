@@ -1,0 +1,162 @@
+[
+	{
+		"ID":1,
+		"Text":"SKN Silesia Automotive",
+	},
+	{
+		"ID":2,
+		"Text":"SKN SR „Silesia Racing”",
+	},
+	{
+		"ID":3,
+		"Text":"SKN Zębatka",
+	},
+	{
+		"ID":4,
+		"Text":"SKN C.A.D",
+	},
+	{
+		"ID":5,
+		"Text":"SKN LogistiCAD",
+	},
+	{
+		"ID":6,
+		"Text":"SKN LogistiCAD",
+	},
+	{
+		"ID":7,
+		"Text":"SKN Signalis",
+	},
+	{
+		"ID":8,
+		"Text":"Lotnicze SKN",
+	},
+	{
+		"ID":9,
+		"Text":"Szybowcowe SKN",
+	},
+	{
+		"ID":10,
+		"Text":"SKN Smart Production",
+	},
+	{
+		"ID":11,
+		"Text":"SKN TECHNOMAT",
+	},
+	{
+		"ID":12,
+		"Text":"SKN Mater-Tech",
+	},
+	{
+		"ID":13,
+		"Text":"SKN GetIT",
+	},
+	{
+		"ID":14,
+		"Text":"SKN WeldOne",
+	},
+	{
+		"ID":15,
+		"Text":"SKN Innowacyjne Technologie Systemów Elektroenergetyki",
+	},
+	{
+		"ID":16,
+		"Text":"SKN Energetyków",
+	},
+	{
+		"ID":17,
+		"Text":"SKN Elektroników Praktyków",
+	},
+	{
+		"ID":18,
+		"Text":"SKN Elektrotechników im. Prof. Stanisława Fryzego",
+	},
+	{
+		"ID":19,
+		"Text":"SKN Stowarzyszenia Elektryków Polskich",
+	},
+	{
+		"ID":20,
+		"Text":"SKN Energetyki Prosumenckiej",
+	},
+	{
+		"ID":21,
+		"Text":"SKN FOTON",
+	},
+	{
+		"ID":22,
+		"Text":"SKN Energoelektroników",
+	},
+	{
+		"ID":23,
+		"Text":"SKN Sterowania Robotów Mobilnych",
+	},
+	{
+		"ID":24,
+		"Text":"SKN Mechatroników",
+	},
+	{
+		"ID":25,
+		"Text":"SKN Fantom",
+	},
+	{
+		"ID":26,
+		"Text":"Elastyczność",
+	},
+	{
+		"ID":27,
+		"Text":"Odpowiedzialność",
+	},
+	{
+		"ID":28,
+		"Text":"Dobra organizacja pracy",
+	},
+	{
+		"ID":29,
+		"Text":"Umiejętność szybkiego uczenia się",
+	},
+	{
+		"ID":30,
+		"Text":"Skuteczna komunikacja",
+	},
+	{
+		"ID":31,
+		"Text":"Łatwość nawiązywania kontaktów",
+	},
+	{
+		"ID":32,
+		"Text":"Umiejętność pracy w grupie i samodzielnie",
+	},
+	{
+		"ID":33,
+		"Text":"Zaangażowanie",
+	},
+	{
+		"ID":34,
+		"Text":"Umiejętność wyznaczania priorytetów",
+	},
+	{
+		"ID":35,
+		"Text":"Pomysłowość",
+	},
+	{
+		"ID":36,
+		"Text":"Znajomość języków obcych",
+	},
+	{
+		"ID":37,
+		"Text":"Znajomość języków programowania",
+	},
+	{
+		"ID":38,
+		"Text":"Obsługa edytorów tekstu",
+	},
+	{
+		"ID":39,
+		"Text":"Obsługa specjalistycznego oprogramowania",
+	},
+	{
+		"ID":40,
+		"Text":"Prawo jazdy kat. B",
+	},
+]
